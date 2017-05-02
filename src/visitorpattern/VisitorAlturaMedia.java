@@ -1,5 +1,6 @@
 package visitorpattern;
 
+import abstracao.IElement;
 import abstracao.IVisitor;
 
 /**
@@ -25,6 +26,12 @@ public class VisitorAlturaMedia implements IVisitor{
     
     public Double calculaAlturaMedia() {
         return alturaAcumulada / qtdeVisitados;
+    }
+
+    @Override
+    public void visitElement(IElement element) {
+        qtdeVisitados++;
+        alturaAcumulada += element.execute();
     }
     
 }

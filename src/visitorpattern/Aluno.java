@@ -11,6 +11,7 @@ public class Aluno implements IElement{
     
     private Double score;
     private Double altura;
+    private IVisitor visitor;
 
     public Aluno(Double score, Double altura) {
         this.score = score;
@@ -19,7 +20,8 @@ public class Aluno implements IElement{
     
     @Override
     public void accept(IVisitor visitor) {
-        visitor.visitAluno(this);
+        this.visitor = visitor;
+        visitor.visitElement(this);
     }
     
     public Double getScore() {
@@ -37,5 +39,15 @@ public class Aluno implements IElement{
     public void setAltura(Double altura) {
         this.altura = altura;
     }
-    
+
+    @Override
+    public Double execute() {
+        if(visitor instanceof VisitorAlturaMedia)
+            return this.altura;
+        if(visitor instanceof VisitorScoreMedio)
+            return this.score;
+        
+        return 0.0;
+    }
+
 }

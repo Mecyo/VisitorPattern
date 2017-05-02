@@ -16,6 +16,7 @@ public class Professor implements IElement{
     
     private Double altura;
     private Integer publicacoes;
+    private IVisitor visitor;
 
     public Professor(Double altura, Integer publicacoes) {
         this.altura = altura;
@@ -24,7 +25,8 @@ public class Professor implements IElement{
 
     @Override
     public void accept(IVisitor visitor) {
-        visitor.visitProfessor(this);
+        this.visitor = visitor;
+        visitor.visitElement(this);
     }
     
     public Double getAltura() {
@@ -42,5 +44,13 @@ public class Professor implements IElement{
     public void setPublicacoes(Integer publicacoes) {
         this.publicacoes = publicacoes;
     }
-    
+
+    @Override
+    public Double execute() {
+        if(visitor instanceof VisitorAlturaMedia)
+            return this.altura;
+        
+        return 0.0;
+    }
+
 }

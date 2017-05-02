@@ -13,4 +13,6 @@ public interface IVisitor {
     
     public void visitProfessor(Professor elementB);
     
+    public void visitElement(IElement element);
+    
 }

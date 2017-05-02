@@ -1,5 +1,6 @@
 package visitorpattern;
 
+import abstracao.IElement;
 import abstracao.IVisitor;
 
 /**
@@ -23,6 +24,12 @@ public class VisitorScoreMedio implements IVisitor{
     
     public Double calculaScoreMedio() {
         return scoreAcumulado / qtdeVisitados;
+    }
+
+    @Override
+    public void visitElement(IElement element) {
+        qtdeVisitados++;
+        scoreAcumulado += element.execute();
     }
     
 }
