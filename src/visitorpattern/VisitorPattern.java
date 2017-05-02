@@ -35,6 +35,9 @@ public class VisitorPattern {
         elements.add(new Aluno(9.5, 2.0));
         elements.add(new Aluno(10.0, 1.45));
         elements.add(new Professor(1.50, 98));
+        elements.add(new Palestrante(580.00, 1.50));
+        elements.add(new Palestrante(2580.00, 2.15));
+        elements.add(new Palestrante(360.00, 1.87));
         
         visitar();
         
