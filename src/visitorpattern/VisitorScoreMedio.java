@@ -27,9 +27,10 @@ public class VisitorScoreMedio implements IVisitor{
     }
 
     @Override
-    public void visitElement(IElement element) {
+    public void visitElement(Object element) {
         qtdeVisitados++;
-        scoreAcumulado += element.execute();
+        String metodo = "getScore";
+        //scoreAcumulado += element.execute();
     }
     
 }

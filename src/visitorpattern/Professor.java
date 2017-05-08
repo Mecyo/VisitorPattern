@@ -5,6 +5,7 @@
  */
 package visitorpattern;
 
+import abstracao.AbstractElement;
 import abstracao.IElement;
 import abstracao.IVisitor;
 
@@ -12,7 +13,7 @@ import abstracao.IVisitor;
  *
  * @author Emerson
  */
-public class Professor implements IElement{
+public class Professor extends AbstractElement implements IElement{
     
     private Double altura;
     private Integer publicacoes;

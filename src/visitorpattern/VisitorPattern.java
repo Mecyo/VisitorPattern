@@ -41,6 +41,7 @@ public class VisitorPattern {
         
         visitar();
         
+        
         System.out.println("Altura média: " + visitorAlturaMedia.calculaAlturaMedia());
         System.out.println("Score médio: " + visitorScoreMedio.calculaScoreMedio());
     }
